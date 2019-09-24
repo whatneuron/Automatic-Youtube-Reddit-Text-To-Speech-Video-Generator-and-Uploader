@@ -22,7 +22,7 @@ from PyQt5 import uic
 sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
 # Connect the socket to the port where the server is listening
-server_address = ('108.61.196.171', 10000)
+server_address = ('localhost', 10000)
 access_key = None
 loginwindowinstance = None
 login_sucess = None
@@ -40,9 +40,7 @@ class LoginWindow(QMainWindow):
         connectToServer()
         self.login.clicked.connect(self.attemptLogin)
         self.login_response.connect(self.loginResponse)
-        login("admin", "icecream", self)
-
-    #admin icecream
+        
     def attemptLogin(self):
         username = self.username.text()
         password = self.password.text()
